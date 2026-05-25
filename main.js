@@ -5,26 +5,20 @@ const repoList = document.getElementById("repo-list");
 fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=5`)
   .then(response => response.json())
   .then(repos => {
-    repoList.innerHTML = ""; // goliți înainte, ca să nu se adune la fiecare refresh
+    repoList.innerHTML = "";
     repos.forEach(repo => {
       const card = document.createElement("div");
-      card.style.border = "1px solid #bbb";
-      card.style.padding = "14px";
-      card.style.marginBottom = "18px";
-      card.style.borderRadius = "10px";
-      card.style.background = "#fff";
-      card.style.boxShadow = "0 2px 8px #eee";
-      
+      card.className = "github-card";
       card.innerHTML = `
-        <h3 style="margin: 0 0 8px 0;">
-          <a href="${repo.html_url}" target="_blank" style="color: #0066cc; text-decoration: none;">
+        <h3>
+          <a href="${repo.html_url}" target="_blank">
             ${repo.name}
           </a>
         </h3>
-        <p style="margin: 0 0 8px 0;">
+        <p>
           ${repo.description ? repo.description : "<span style='color:#888'>Fără descriere disponibilă</span>"}
         </p>
-        <p style="margin: 0 0 6px 0;">
+        <p>
           <strong>Limbaj principal:</strong> ${repo.language ? repo.language : "Nespecificat"}
         </p>
         <div style="font-size: 0.95em; margin-bottom: 10px;">
@@ -32,7 +26,7 @@ fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_pa
           &nbsp;&nbsp;|&nbsp;&nbsp;
           🍴 ${repo.forks_count}
         </div>
-        <a href="${repo.html_url}" target="_blank" style="display:inline-block; padding:6px 16px; background:#0070f3; color:#fff; border-radius:6px; text-decoration:none;">
+        <a href="${repo.html_url}" target="_blank" class="button">
           Vezi pe GitHub
         </a>
       `;

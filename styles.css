@@ -44,3 +44,46 @@ section {
 ul {
   padding-left: 1.5em;
 }
+
+#proiecte-github {
+  margin-top: 3em;
+}
+#proiecte-github h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #25518c;
+  border-bottom: 1.5px solid #bcd0ee;
+  padding-bottom: 4px;
+}
+#repo-list {
+  margin-top: 1em;
+}
+.github-card {
+  border: 1px solid #bbb;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px #eee;
+  transition: box-shadow 0.2s;
+}
+.github-card:hover {
+  box-shadow: 0 4px 16px #ddd;
+}
+.github-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+}
+.github-card a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.github-card a.button {
+  display:inline-block;
+  padding:6px 16px;
+  background:#0070f3;
+  color:#fff;
+  border-radius:6px;
+  text-decoration:none;
+  margin-top: 6px;
+}
