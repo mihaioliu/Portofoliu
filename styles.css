@@ -1,66 +1,46 @@
 body {
-  font-family: Arial, sans-serif;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 18px;
-  background: #f6f8fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8f9fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
 }
-.profil, .portofoliu, .experienta {
-  margin-bottom: 36px;
-  padding: 16px;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 2px 8px #e7e7e7;
+
+header {
+  background: #25518c;
+  color: white;
+  text-align: center;
+  padding: 2em 1em 1em 1em;
 }
-.profil {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 24px;
+
+header h1 {
+  margin: 0 0 0.2em 0;
 }
-.profil img {
-  width: 114px;
-  height: 114px;
-  object-fit: cover;
-  border-radius: 50%;
-  flex-shrink: 0;
-  border: 2px solid #e5e5e5;
+
+.contact {
+  font-size: 1.1em;
+  margin-top: 1em;
 }
-.profil-info {
-  flex: 1;
+
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  background: white;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
 }
-.portofoliu .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: space-between;
+
+main h2 {
+  color: #25518c;
+  border-bottom: 1.5px solid #bcd0ee;
+  padding-bottom: 4px;
 }
-.portofoliu .cards > div {
-  flex: 1 1 240px;
-  min-width: 220px;
-  max-width: 100%;
-  box-sizing: border-box;
-  background: #fff;
-  border: 1px solid #e2e2e2;
-  border-radius: 10px;
-  padding: 14px;
-  box-shadow: 0 1px 4px #eeeeee;
+
+section {
+  margin-bottom: 2em;
 }
-@media (max-width: 600px) {
-  .profil {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .portofoliu .cards {
-    flex-direction: column;
-    gap: 14px;
-  }
-}
-h2 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 8px;
-  margin-top: 0;
-}
-a {
-  color: #1a73e8;
+
+ul {
+  padding-left: 1.5em;
 }
