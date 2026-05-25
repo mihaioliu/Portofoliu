@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px;
+  background: #f6f8fa;
+}
+.profil, .portofoliu, .experienta {
+  margin-bottom: 36px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px #e7e7e7;
+}
+.profil {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.profil img {
+  width: 114px;
+  height: 114px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid #e5e5e5;
+}
+.profil-info {
+  flex: 1;
+}
+.portofoliu .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+}
+.portofoliu .cards > div {
+  flex: 1 1 240px;
+  min-width: 220px;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 1px 4px #eeeeee;
+}
+@media (max-width: 600px) {
+  .profil {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .portofoliu .cards {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+a {
+  color: #1a73e8;
+}
