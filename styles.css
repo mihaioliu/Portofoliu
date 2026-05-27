@@ -1,89 +1,390 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f8f9fa;
-  color: #222;
+  background: #f9f9f6;
+  color: #232323;
   margin: 0;
   padding: 0;
+  line-height: 1.7;
 }
-
 header {
-  background: #25518c;
-  color: white;
+  background: #70877f;
+  color: #fff;
   text-align: center;
-  padding: 2em 1em 1em 1em;
+  padding: 2em 1em 1.2em 1em;
+  border-bottom: 2.5px solid #e0e0e0;
 }
-
 header h1 {
-  margin: 0 0 0.2em 0;
+  margin: 0 0 0.25em 0;
+  letter-spacing: 0.01em;
 }
-
+header p {
+  margin-top: 0;
+  font-size: 1.13em;
+  font-weight: 300;
+}
 .contact {
-  font-size: 1.1em;
-  margin-top: 1em;
+  font-size: 1em;
+  margin-top: 0.5em;
+  color: #e0e0e0;
+  opacity: 0.95;
+  letter-spacing: 0.03em;
 }
-
+nav {
+  background: #fff;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0.3em 0;
+  list-style: none;
+  gap: 2.5em;
+}
+nav li {
+  margin: 0;
+}
+nav a {
+  color: #506266;
+  font-weight: 500;
+  padding: 0.2em 0.4em 0.18em 0.4em;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.08em;
+  transition: background 0.16s, color 0.13s;
+}
+nav a.active, nav a:hover, nav a:focus {
+  background: #70877f;
+  color: #fff;
+}
+/* Adaptează pentru mobile nav */
+@media (max-width: 570px) {
+  nav ul {
+    gap: 1.2em;
+  }
+  nav a {
+    font-size: 0.99em;
+    padding: 0.26em 0.55em;
+  }
+}
 main {
-  max-width: 800px;
-  margin: 2em auto;
-  background: white;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  max-width: 1000px;
+  margin: 2.3em auto;
+  background: #fff;
+  padding: 2.2em 2.2em 2em 2.2em;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(170, 156, 126, 0.07);
+  border: 1px solid #f2f1ee;
 }
-
-main h2 {
-  color: #25518c;
-  border-bottom: 1.5px solid #bcd0ee;
-  padding-bottom: 4px;
-}
-
 section {
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
 }
-
+main h2 {
+  color: #506266;
+  border-bottom: 1.5px solid #e0e0e0;
+  padding-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 1.1em;
+  font-size: 1.16em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+h3 {
+  color: #70877f;
+  margin-top: 0.9em;
+  font-size: 1.03em;
+}
 ul {
   padding-left: 1.5em;
+  margin-bottom: 0.9em;
 }
-
-#proiecte-github {
+li {
+  margin-bottom: 0.35em;
+}
+.about-container {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+.about-image {
+  display: flex;
+  align-items: flex-start;
+  min-width: 160px;
+  margin-right: 25px;
+}
+.about-image img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #70877f;
+  box-shadow: 0 2px 16px #d5d5d5;
+  background: #e0e0e0;
+}
+.about-content {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.about-grid {
+  display: flex;
+  gap: 2.2em;
+  flex-wrap: wrap;
+  margin-top: 1.5em;
+}
+.about-grid > div {
+  flex: 1 1 180px;
+  min-width: 180px;
+}
+.exp-block {
+  margin-bottom: 2em;
+}
+.exp-block .timp {
+  font-size: 0.97em;
+  color: #506266;
+  display: block;
+  margin-bottom: 0.5em;
+}
+#projects {
   margin-top: 3em;
-}
-#proiecte-github h2 {
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: #25518c;
-  border-bottom: 1.5px solid #bcd0ee;
-  padding-bottom: 4px;
 }
 #repo-list {
   margin-top: 1em;
 }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2em;
+}
+
+.education-card { grid-column: 1; grid-row: 1; }
+.info-card:not(.education-card):not(.languages-card) { grid-column: 2; grid-row: 1; }
+.languages-card { grid-column: 1 / span 2; grid-row: 2; }
+
+/* Carduri generale */
+.info-card {
+  background: #fafaf7;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px #f2f2f0;
+  border-left: 4px solid #70877f;
+  padding: 1.1em 1.2em 1.1em 1.5em;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titlu cu icon */
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.7em;
+  font-size: 1.09em;
+  font-weight: 600;
+  color: #506266;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.info-card .fa-solid {
+  color: #70877f;
+  font-size: 1.09em;
+  min-width: 18px;
+}
+
+/* Educație - fără bullet, fiecare diploma e "row" cu spacing */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0.1em 0 0.2em 0;
+}
+.education-item {
+  padding-left: 0;
+}
+
+/* Competențe - badge-uri */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 0;
+}
+.badge {
+  background: #f9f9f6;
+  border: 1px solid #e0e0e0;
+  color: #506266;
+  border-radius: 12px;
+  padding: 0.24em 1em;
+  font-size: 0.97em;
+  box-shadow: 0 1px 2px #ededed;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Limbi - fără bullet, practic ca un card cu rânduri */
+.languages-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1em 2.5em;
+  margin-top: 0.4em;
+}
+.language-item {
+  padding-left: 0;
+  font-size: 1.08em;
+  display: flex;
+  align-items: center;
+}
+.flag {
+  font-size: 1.19em;
+  margin-right: 0.4em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.1em;
+  }
+  .education-card { grid-column: 1; grid-row: 1; }
+  .info-card:not(.education-card):not(.languages-card) { grid-column: 1; grid-row: 2; }
+  .languages-card { grid-column: 1; grid-row: 3; }
+}
+/* Responsive grid ajustat */
+@media (max-width: 1000px) {
+  .about-grid {
+    gap: 1em;
+  }
+  .info-card {
+    min-width: 180px;
+    border-left-width: 3px;
+    padding: 1em 0.7em 1em 1.1em;
+  }
+}
+@media (max-width: 700px) {
+  .about-grid {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .info-card {
+    min-width: 0;
+  }
+}
+
 .github-card {
-  border: 1px solid #bbb;
-  padding: 14px;
-  margin-bottom: 18px;
-  border-radius: 10px;
+  border: 1px solid #e0e0e0;
   background: #fff;
-  box-shadow: 0 2px 8px #eee;
-  transition: box-shadow 0.2s;
+  border-radius: 14px;
+  padding: 1.12em 1.2em 1.05em 1.2em;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px #f0eee9;
+  transition: box-shadow 0.17s, transform 0.13s;
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .github-card:hover {
-  box-shadow: 0 4px 16px #ddd;
+  box-shadow: 0 6px 20px #e0e0e0;
+  transform: translateY(-2.5px) scale(1.012);
 }
 .github-card h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.1em;
+  margin: 0 0 0.4em 0;
+  font-size: 1.08em;
+  font-weight: 500;
 }
 .github-card a {
-  color: #0066cc;
+  color: #506266;
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+.github-card a:hover, .github-card a:focus {
+  color: #70877f;
   text-decoration: none;
 }
-.github-card a.button {
+.github-card a.button, .btn-accent {
   display:inline-block;
-  padding:6px 16px;
-  background:#0070f3;
+  padding:6px 18px;
+  background:#70877f;
   color:#fff;
   border-radius:6px;
   text-decoration:none;
-  margin-top: 6px;
+  margin-top: 9px;
+  font-size: 1em;
+  border:none;
+  transition: background 0.14s, color 0.12s;
+  text-align:center;
+}
+.github-card a.button:hover, .btn-accent:hover {
+  background: #506266;
+  color: #e0e0e0;
+}
+@media (max-width: 1000px) {
+  main {
+    max-width: 97vw;
+    padding: 1.3em 0.8em 1.3em 0.8em;
+  }
+  .about-grid,
+  .about-container {
+    gap: 1em;
+  }
+}
+@media (max-width: 700px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-image {
+    margin-right: 0;
+    margin-bottom: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-image img {
+    margin-bottom: 0;
+  }
+  .about-content {
+    width: 100%;
+  }
+  .about-grid {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    font-size: 0.97em;
+    padding: 1.2em 0.2em 0.5em 0.2em;
+  }
+  main {
+    border-radius: 0;
+    margin: 0;
+    padding: 0.7em 0.25em 1.1em 0.25em;
+    box-shadow: none;
+  }
+  section {
+    margin-bottom: 1.4em;
+  }
+  .about-grid {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+  .github-card {
+    padding: 0.7em;
+    border-radius: 8px;
+    font-size: 0.96em;
+  }
+  .github-card h3 {
+    font-size: 1em;
+  }
+  .github-card a.button {
+    width: 100%;
+    font-size: 1em;
+    margin-top: 7px;
+  }
+  .contact {
+    font-size: 0.96em;
+    padding: 0 1px;
+  }
 }
