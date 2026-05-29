@@ -25,6 +25,16 @@
   <main>
     <section id="projects">
       <h2>Ultimele proiecte publice GitHub</h2>
+      <div id="filter-bar">
+        <input type="text" id="search-input" placeholder="Caută proiect..." />
+        <select id="language-filter">
+          <option value="">Toate limbajele</option>
+        </select>
+        <select id="sort-select">
+          <option value="updated">Sortare: Actualizat recent</option>
+          <option value="stars">Sortare: Stele multe</option>
+        </select>
+      </div>
       <div id="repo-list"></div>
     </section>
   </main>

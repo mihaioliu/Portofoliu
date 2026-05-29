@@ -388,3 +388,52 @@ li {
     padding: 0 1px;
   }
 }
+
+#filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em;
+  margin-top: 0.7em;
+  margin-bottom: 1.3em;
+  align-items: center;
+}
+#filter-bar input,
+#filter-bar select {
+  padding: 0.5em 0.9em;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1.04em;
+  background: #fafaf7;
+  color: #506266;
+}
+#filter-bar input:focus,
+#filter-bar select:focus {
+  outline: 2px solid #70877f33;
+  border-color: #70877f;
+}
+
+.spinner {
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #70877f;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin: 2em auto 0.7em auto;
+  animation: spin 0.85s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.error-message {
+  color: #fff;
+  background: #d75044;
+  padding: 1em 1.3em;
+  border-radius: 10px;
+  margin-top: 1em;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 1px 8px #f2ddddee;
+  max-width: 99vw;
+}
