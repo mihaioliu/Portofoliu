@@ -5,7 +5,6 @@ const searchInput = document.getElementById("search-input");
 const languageFilter = document.getElementById("language-filter");
 const sortSelect = document.getElementById("sort-select");
 
-// Creează spinnerul (sau după preferință schelet, poți folosi și SVG-uri custom)
 function showLoading() {
   repoList.innerHTML = `
     <div class="spinner"></div>
@@ -95,13 +94,27 @@ function applyFiltersAndRender() {
   renderRepoCards(filteredRepos);
 }
 
-// === Apel API cu feedback vizual loading/error handling îmbunătățit ===
+// 🔥 Funcție pentru a citi projects.json
+function loadFallbackProjects() {
+  return fetch('projects.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .catch(error => {
+      console.error("❌ Eroare la citirea projects.json:", error);
+      return []; // Returnează array gol dacă nu merge
+    });
+}
+
+// === Apel API cu fallback handling ===
 showLoading();
 fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`)
   .then(async response => {
     if (!response.ok) {
       let msg = "Ups! Nu am putut încărca proiectele momentan.";
-      // error pentru ratelimiting, user inexistent etc.
       if (response.status === 404) msg = "Utilizatorul GitHub nu există.";
       if (response.status === 403) msg = "S-a atins limita de request-uri GitHub. Încearcă mai târziu.";
       throw new Error(msg);
@@ -109,8 +122,26 @@ fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`)
     return response.json();
   })
   .then(repos => {
-    allRepos = repos.filter(repo => !repo.fork);
-    allRepos = sortRepos(allRepos);
+    allRepos = repos.filter(repo => !repo.fork && repo.name !== 'Portofoliu');
+    
+    console.log("Proiecte GitHub:", allRepos.length);
+    
+    // 🔍 Dacă sunt mai puțin de 5 proiecte, adaug fallback
+    if (allRepos.length < 5) {
+      console.log("Se adaugă proiecte de fallback...");
+      return loadFallbackProjects()
+        .then(fallbackProjects => {
+          console.log("Proiecte din JSON:", fallbackProjects.length);
+          allRepos = allRepos.concat(fallbackProjects);
+          console.log("Total după fallback:", allRepos.length);
+          return allRepos;
+        });
+    }
+    
+    return allRepos;
+  })
+  .then(repos => {
+    allRepos = sortRepos(repos);
     populateLanguageFilter(allRepos);
     applyFiltersAndRender();
   })

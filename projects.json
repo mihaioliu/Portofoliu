@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Chat Application",
+    "description": "Aplicație de chat real-time cu Socket.io și Node.js backend",
+    "language": "JavaScript",
+    "stargazers_count": 12,
+    "forks_count": 3,
+    "html_url": "https://github.com/mihaioliu/chat-app"
+  },
+  {
+    "name": "Todo List Manager",
+    "description": "Manager de taskuri cu localStorage și interfață modernă",
+    "language": "JavaScript",
+    "stargazers_count": 8,
+    "forks_count": 2,
+    "html_url": "https://github.com/mihaioliu/todo-manager"
+  },
+  {
+    "name": "Weather Application",
+    "description": "Aplicație de vreme cu API OpenWeather și geolocation",
+    "language": "JavaScript",
+    "stargazers_count": 6,
+    "forks_count": 1,
+    "html_url": "https://github.com/mihaioliu/weather-app"
+  },
+  {
+    "name": "E-Commerce Store",
+    "description": "Platform de comerț electronic cu React și Redux",
+    "language": "JavaScript",
+    "stargazers_count": 15,
+    "forks_count": 4,
+    "html_url": "https://github.com/mihaioliu/ecommerce-store"
+  },
+  {
+    "name": "Portfolio Website",
+    "description": "Portofoliu personal cu design responsive și animații",
+    "language": "HTML/CSS",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "html_url": "https://github.com/mihaioliu/portfolio"
+  }
+]
