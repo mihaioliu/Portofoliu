@@ -1,5 +1,14 @@
 const GITHUB_USERNAME = "mihaioliu";
 
+// 🔍 Detectează repo-ul
+const isGitHubPages = window.location.hostname.includes('github.io');
+const repoName = window.location.pathname.split('/')[1]; // Extrage repo din URL
+const basePath = isGitHubPages && repoName ? `/${repoName}/` : './';
+
+console.log("🔍 BASE PATH:", basePath);
+console.log("🔍 IS GITHUB PAGES:", isGitHubPages);
+console.log("🔍 REPO NAME:", repoName);
+
 const repoList = document.getElementById("repo-list");
 const searchInput = document.getElementById("search-input");
 const languageFilter = document.getElementById("language-filter");
@@ -96,7 +105,7 @@ function applyFiltersAndRender() {
 
 // 🔥 Funcție pentru a citi projects.json
 function loadFallbackProjects() {
-  return fetch('projects.json')
+  return fetch(`${basePath}projects.json`)  // Folosește basePath
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
