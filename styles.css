@@ -90,7 +90,7 @@ main h2 {
   letter-spacing: 0.01em;
 }
 h3 {
-  color: #70877f;
+  color: #39FF14;
   margin-top: 0.9em;
   font-size: 1.03em;
 }
@@ -187,7 +187,7 @@ li {
   gap: 7px;
 }
 .info-card .fa-solid {
-  color: #70877f;
+  color: #39FF14;
   font-size: 1.09em;
   min-width: 18px;
 }
